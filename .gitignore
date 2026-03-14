@@ -1,0 +1,19 @@
+# Maven build folder
+target/
+
+# TestNG reports
+test-output/
+
+# Eclipse IDE settings
+.settings/
+.classpath
+.project
+
+# Mac system files
+.DS_Store
+
+# Logs
+*.log
+
+# Compiled Java files
+*.class
