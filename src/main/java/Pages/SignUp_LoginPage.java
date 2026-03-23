@@ -65,7 +65,7 @@ public class SignUp_LoginPage extends Explicit_Wait{
     	 Explicit_Wait.Wait_until_element_to_be_clickable(driver.findElement(loginButtonElement));
     	  WebElement loginButtonwebElement = driver.findElement(loginButtonElement);
 		  Explicit_Wait.Wait_until_element_to_be_clickable(loginButtonwebElement);
-		  Thread.sleep(5000);
+		  Thread.sleep(10000);
 		  loginButtonwebElement.click();
 
 		  
