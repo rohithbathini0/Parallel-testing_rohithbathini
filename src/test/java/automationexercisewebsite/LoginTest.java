@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest{
 	Excel_utilities excel_utilities;
 	
 	@Test(priority = 1)
-    public void Valid_credentials_loginTest() throws IOException {
+    public void Valid_credentials_loginTest() throws IOException, InterruptedException {
 		
 	    loginPage = new SignUp_LoginPage(driver);
 				
@@ -41,7 +41,7 @@ public class LoginTest extends BaseTest{
 
 	
 	@Test(priority = 2)
-    public void inValid_credentials_loginTest() throws IOException {
+    public void inValid_credentials_loginTest() throws IOException, InterruptedException {
 		
 		//loginPage = new SignUp_LoginPage(driver);
 				
