@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -14,6 +15,7 @@ public class Excel_utilities {
 	 File excel_File ;
 	 XSSFWorkbook workbook;
 	 FileInputStream fileInputStream;
+	 DataFormatter dataformett;
 	
  public XSSFSheet get_Sheet(String path,String sheetname) throws IOException{
 	  excel_File = new File(System.getProperty("user.dir")+path);	
@@ -29,7 +31,9 @@ public class Excel_utilities {
 	 
 	 XSSFRow row = sheet.getRow(row_number);
 	 XSSFCell cell = row.getCell(cell_number);
-	 String value  =  cell.getRawValue();
+	 dataformett = new DataFormatter();
+	 String value  = dataformett.formatCellValue(cell);
+	 System.out.println("excel output value"+ value);
 	 
 	 return value;
 	 

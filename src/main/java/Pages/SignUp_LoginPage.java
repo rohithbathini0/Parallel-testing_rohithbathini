@@ -28,7 +28,7 @@ public class SignUp_LoginPage extends Explicit_Wait{
 
     private	By login_passwordElement = By.xpath("//div[@class=\'login-form\']//input[@placeholder=\'Password\']");
 	
-    private	By loginButtonElement =By.xpath("//div[@class='login-form']//*[text()='Login']");
+    private	By loginButtonElement =By.xpath("//div[@class='login-form']//button[text()='Login']");
     
     private	By Invalid_credentials_error=By.xpath("//p[text()=\'Your email or password is incorrect!\']");
 	
@@ -61,7 +61,8 @@ public class SignUp_LoginPage extends Explicit_Wait{
      }
 	 
      public void click_Login_Element() {
- 		
+    	 
+    	 Explicit_Wait.Wait_until_element_to_be_clickable(driver.findElement(loginButtonElement));
     	  WebElement loginButtonwebElement = driver.findElement(loginButtonElement);
 		  Explicit_Wait.Wait_until_element_to_be_clickable(loginButtonwebElement);
 		  loginButtonwebElement.click();
@@ -71,7 +72,7 @@ public class SignUp_LoginPage extends Explicit_Wait{
      
      public String get_Invalid_credentials_error_message() {
   	
-      Explicit_Wait.Wait_until_Presence_of_element_located(Invalid_credentials_error);
+     // Explicit_Wait.Wait_until_Presence_of_element_located(Invalid_credentials_error);
    	  String Invalid_credentials_error_message = driver.findElement(Invalid_credentials_error).getText();
 	  return Invalid_credentials_error_message;
 		

@@ -10,7 +10,7 @@ public class Home_Page extends Explicit_Wait{
 
 
    	WebDriver driver;	
-	 private By logoutElement = By.cssSelector("[href=\'/logout\']");
+	 private By logoutElement = By.xpath("//a[@href='/logout']");
 	 By usernameElement = By.xpath("//ul[@class=\"nav navbar-nav\"]//ul[@class=\"nav navbar-nav\"]//a//b");
 
 	public Home_Page(WebDriver driver){
@@ -30,7 +30,7 @@ public class Home_Page extends Explicit_Wait{
     
     public String get_Account_UserName() {
     	
-    	 Explicit_Wait.Wait_until_visibilityOfElementLocated(usernameElement);
+    	// Explicit_Wait.Wait_until_visibilityOfElementLocated(usernameElement);
     	         
     	 String username = driver.findElement(usernameElement).getText();   	 
     	 return username;
